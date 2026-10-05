@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://zyubiaeuvmjofjgomgqp.supabase.co; img-src 'self'; form-action 'none'; base-uri 'none'">
+<title>Panel Dnia — konto</title>
+<link rel="stylesheet" href="konto.css">
+</head>
+<body>
+<main>
+  <h1>Panel Dnia</h1>
+  <section id="busy"><p>Sprawdzam link…</p></section>
+
+  <section id="reset" hidden>
+    <h2>Ustaw nowe hasło</h2>
+    <p class="muted" id="resetFor"></p>
+    <form id="resetForm" novalidate>
+      <label>Nowe hasło <small>(min. 8 znaków)</small><input type="password" id="p1" autocomplete="new-password" minlength="8" required></label>
+      <label>Powtórz nowe hasło<input type="password" id="p2" autocomplete="new-password" minlength="8" required></label>
+      <p class="err" id="resetErr" role="alert"></p>
+      <button type="submit" id="resetBtn">Zapisz nowe hasło</button>
+    </form>
+  </section>
+
+  <section id="done" hidden>
+    <h2 id="doneTitle">Gotowe</h2>
+    <p id="doneText"></p>
+  </section>
+
+  <section id="bad" hidden>
+    <h2>Link nie działa</h2>
+    <p id="badText">Link wygasł albo został już użyty. Każdy link działa tylko raz i przez krótki czas.</p>
+    <p class="muted">Poproś o nowy w aplikacji: <b>Ustawienia → Konto</b>.</p>
+  </section>
+
+  <section id="idle" hidden>
+    <p>Ta strona obsługuje linki z wiadomości od Panelu Dnia (zmiana hasła, potwierdzenie adresu e-mail). Otwórz ją z wiadomości.</p>
+  </section>
+</main>
+<script src="supabase.js"></script>
+<script src="konto.js"></script>
+</body>
+</html>

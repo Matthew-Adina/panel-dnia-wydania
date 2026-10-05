@@ -1,0 +1,17 @@
+:root { --bg: #151515; --card: #1d1d1f; --line: #2c2c30; --text: #ececec; --muted: #9d9da5; --accent: #e5484d; --err: #ff6b6b; color-scheme: dark; }
+@media (prefers-color-scheme: light) { :root { --bg: #f6f6f7; --card: #fff; --line: #e4e4e7; --text: #18181b; --muted: #63636b; --accent: #dc2626; --err: #dc2626; color-scheme: light; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 420px; margin: 48px auto; padding: 0 16px; }
+h1 { font-size: 20px; color: var(--accent); margin: 0 0 20px; }
+h2 { font-size: 22px; margin: 0 0 12px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+p { margin: 0 0 12px; }
+.muted { color: var(--muted); font-size: 14px; }
+label { display: block; font-size: 14px; font-weight: 600; margin: 0 0 14px; }
+label small { font-weight: 400; color: var(--muted); }
+input { display: block; width: 100%; margin-top: 6px; padding: 11px 12px; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; }
+input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+button { width: 100%; padding: 12px; font: inherit; font-weight: 600; color: #fff; background: var(--accent); border: 0; border-radius: 10px; cursor: pointer; }
+button:disabled { opacity: .6; cursor: default; }
+.err { color: var(--err); font-size: 14px; min-height: 1em; }
